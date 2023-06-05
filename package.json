@@ -1,0 +1,27 @@
+{
+  "name": "graphql-over-grpc-experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:graphql": "tsc && cp books.proto ./dist",
+    "compile:proto": "vendor/protoc-23.2-osx-x86_64/bin/protoc",
+    "start:graphql:server": "node ./dist/graphql-server.js",
+    "start:grpc:server": "node grpc-server.js",
+    "start:grpc:client": "node grpc-client.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.7.1",
+    "@grpc/grpc-js": "^1.8.15",
+    "@grpc/proto-loader": "^0.7.7",
+    "google-protobuf": "^3.21.2",
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "typescript": "^5.1.3"
+  }
+}
