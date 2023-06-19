@@ -131,6 +131,59 @@ This diagram can be interpreted as follows:
 8. **Data Sources**: These are the databases, APIs, and other sources of data that your server uses to fetch data.
 
 
+### How do you write your application?
+
+- Schema First Design
+
+- Schema Usage
+
+```mermaid
+graph TB
+    A[GraphQL Client] --> B[GraphQL Queries/Mutations]
+    B --> C[Apollo Client]
+    C --> D[Network Layer]
+    D --> E[GraphQL Server]
+    E --> F[Resolvers]
+    F --> G[Data Sources]
+    F --> H[GraphQL Schema]
+    H --> I[Type Definitions]
+    H --> J[Resolvers]
+    J --> K[Data Sources]
+```
+
+```mermaid
+graph TB
+    A[GraphQL Client] --> B[GraphQL Queries/Mutations]
+    B --> C[Apollo Client]
+    C --> D[GraphQL Server]
+    D --> E[Resolvers]
+    E --> F[Data Sources]
+    E --> G[GraphQL Schema]
+    G --> H[Type Definitions]
+    G --> I[Resolvers]
+    I --> J[Data Sources]
+```
+
+TODO:fix diagram with arrow text instead of full edges
+```mermaid
+graph TB
+    A[GraphQL Client] -->|"{ books { title, author } }"| B[Apollo Client]
+    B -->|"{ addBook(title: 'New Book', author: 'Author') { title, author } }"| C[GraphQL Server]
+    C --> D[Query/Mutation Parser]
+    D --> E[Resolvers]
+    E --> F[Data Sources]
+    D --> G[GraphQL Schema]
+    G --> H["Type Book { title: String, author: String }"]
+    H --> I["Type Query { books: [Book] }"]
+    I --> J["Type Mutation { addBook(title: String, author: String): Book }"]
+    J --> K["Resolvers { Query: { books() {...} }, Mutation: { addBook(_, { title, author }) {...} } }"]
+    K --> L[Data Sources]
+```
+```mermaid
+```
+```mermaid
+```
+
 ## Links
 
 - [Apollo Server - Fetching data](https://www.apollographql.com/docs/apollo-server/data/fetching-data)
@@ -142,3 +195,11 @@ This diagram can be interpreted as follows:
 - [On GraphQL Gateway to serve Go GRPC microservices 2018 by Iheanyi Ekechukwu(@kwuchu), ](https://iheanyi.com/journal/2018/05/12/the-g-unit-stack-go-graphql-and-grpc/)
 
 - https://www.apollographql.com/docs/apollo-server/
+- https://www.apollographql.com/tutorials/lift-off-part1/05-apollo-server
+
+## TODO
+
+- [ ] protoc plugin to generate graphql schemas from grpc microservices
+
+- [ ] grpc protobuf registry?
+- [ ] describe use case
