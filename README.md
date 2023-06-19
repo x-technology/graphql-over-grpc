@@ -43,8 +43,6 @@ graph TD
 ```
 
 
-
-
 ```mermaid
 graph TB
     A[Consumer] --> B[Gateway]
@@ -196,6 +194,8 @@ graph TB
 
 - https://www.apollographql.com/docs/apollo-server/
 - https://www.apollographql.com/tutorials/lift-off-part1/05-apollo-server
+- https://protobuf.dev/reference/other/
+- 
 
 ## TODO
 
