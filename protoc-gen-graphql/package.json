@@ -10,6 +10,7 @@
   "author": "korzio@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "google-protobuf": "^3.21.2"
+    "google-protobuf": "^3.21.2",
+    "protobufjs": "^7.2.3"
   }
 }

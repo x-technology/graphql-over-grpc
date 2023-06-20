@@ -195,11 +195,14 @@ graph TB
 - https://www.apollographql.com/docs/apollo-server/
 - https://www.apollographql.com/tutorials/lift-off-part1/05-apollo-server
 - https://protobuf.dev/reference/other/
-- 
+-
 
 ## TODO
 
+- [ ] would it be easier to manually create graphql schemas?
 - [ ] protoc plugin to generate graphql schemas from grpc microservices
-
+  - [ ] POC
+  - [ ] find a better transformation library
+  - [ ] npm publish prepare - restructure repo
 - [ ] grpc protobuf registry?
 - [ ] describe use case
