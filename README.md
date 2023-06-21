@@ -42,7 +42,6 @@ graph TD
     F --> G[Output GraphQL Types and Resolvers]
 ```
 
-
 ```mermaid
 graph TB
     A[Consumer] --> B[Gateway]
@@ -54,6 +53,7 @@ graph TB
 ```
 
 This diagram:
+
 - Consumer: This is the user or system that is making requests. It communicates with the Gateway.
 - Gateway: This is the entry point for the Consumer. It routes requests from the Consumer to the appropriate services.
 - Search Service: This service handles search-related requests.
@@ -128,7 +128,6 @@ This diagram can be interpreted as follows:
 
 8. **Data Sources**: These are the databases, APIs, and other sources of data that your server uses to fetch data.
 
-
 ### How do you write your application?
 
 - Schema First Design
@@ -163,6 +162,7 @@ graph TB
 ```
 
 TODO:fix diagram with arrow text instead of full edges
+
 ```mermaid
 graph TB
     A[GraphQL Client] -->|"{ books { title, author } }"| B[Apollo Client]
@@ -177,9 +177,13 @@ graph TB
     J --> K["Resolvers { Query: { books() {...} }, Mutation: { addBook(_, { title, author }) {...} } }"]
     K --> L[Data Sources]
 ```
+
 ```mermaid
+
 ```
+
 ```mermaid
+
 ```
 
 ## Links
@@ -195,14 +199,33 @@ graph TB
 - https://www.apollographql.com/docs/apollo-server/
 - https://www.apollographql.com/tutorials/lift-off-part1/05-apollo-server
 - https://protobuf.dev/reference/other/
--
 
-## TODO
+## Backlog
 
-- [ ] would it be easier to manually create graphql schemas?
+- [ ] document use cases
 - [ ] protoc plugin to generate graphql schemas from grpc microservices
-  - [ ] POC
-  - [ ] find a better transformation library
-  - [ ] npm publish prepare - restructure repo
-- [ ] grpc protobuf registry?
-- [ ] describe use case
+  > POC
+  - [ ] traverse, find all messages and services from input files and generate graphl services
+    https://protobufjs.github.io/protobuf.js/Root.html#nested
+    https://github.com/protobufjs/protobuf.js/blob/master/examples/traverse-types.js
+    > use templates https://github.com/ysugimoto/grpc-graphql-gateway/blob/master/protoc-gen-graphql/template.go
+    - generate graphql types [definitions](./graphql-server.ts#L15)
+    - generate resolvers
+- [ ] npm publish prepare - restructure repo
+
+### Questions
+
+- which grpc protobuf registry to choose? also, is it possible to use graphql apollo registry?
+- is there a better transformation library?
+- is it neccessary to to support all the protoc available flags?
+- would it be easier to manually create graphql schemas?
+
+## Meetings
+
+### 2023-06-...
+
+- About Project
+  - Start
+- Backlog
+  - Questions
+- Links
