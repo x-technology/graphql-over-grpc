@@ -188,6 +188,8 @@ graph TB
 
 ## Links
 
+- [Join the discord community](https://discord.com/invite/ZTnWdVpUPV) to collaborate and feedback on the project
+
 - [Apollo Server - Fetching data](https://www.apollographql.com/docs/apollo-server/data/fetching-data)
 - [grpc node.js simple start](https://github.com/x-technology/mono-repo-nodejs-svc-sample/tree/main/docs/demo-protobuf)
 - [protoc plugins](https://github.com/protocolbuffers/protobuf/blob/main/docs/third_party.md)
