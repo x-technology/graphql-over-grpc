@@ -204,6 +204,7 @@ graph TB
 
 ## Backlog
 
+- [ ] run nestjs tutorial
 - [ ] document use cases
 - [ ] protoc plugin to generate graphql schemas from grpc microservices
   > POC
@@ -224,7 +225,7 @@ graph TB
 
 ## Meetings
 
-### 2023-06-...
+### 2023-06-24
 
 - About Project
   - Start
