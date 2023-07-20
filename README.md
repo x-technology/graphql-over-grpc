@@ -188,8 +188,7 @@ graph TB
 
 ## Links
 
-- [Join the discord community](https://discord.com/invite/ZTnWdVpUPV) to collaborate and feedback on the project
-
+- [Join the XTechnology discord community](https://discord.com/invite/ZTnWdVpUPV) to collaborate and feedback on the project
 - [Apollo Server - Fetching data](https://www.apollographql.com/docs/apollo-server/data/fetching-data)
 - [grpc node.js simple start](https://github.com/x-technology/mono-repo-nodejs-svc-sample/tree/main/docs/demo-protobuf)
 - [protoc plugins](https://github.com/protocolbuffers/protobuf/blob/main/docs/third_party.md)
@@ -202,10 +201,19 @@ graph TB
 - https://www.apollographql.com/tutorials/lift-off-part1/05-apollo-server
 - https://protobuf.dev/reference/other/
 
+### GraphQL
+
+- [GraphQL explained, 2016](https://www.apollographql.com/blog/graphql/basics/graphql-explained/)
+- [GraphQL vs REST comparison](https://www.apollographql.com/blog/graphql/basics/graphql-vs-rest/)
+
+### Gateways
+
+- [GraphQL Mesh A fully-featured GraphQL gateway framework, incl GRPC](https://the-guild.dev/graphql/mesh/docs/handlers/grpc)
+
 ## Backlog
 
-- [ ] run nestjs tutorial
-- [ ] document use cases
+- [ ] create nestjs tutorial - schema first (nexus!) or code first?
+- [ ] [check golang grpc gateway](https://github.com/grpc-ecosystem/grpc-gateway)
 - [ ] protoc plugin to generate graphql schemas from grpc microservices
   > POC
   - [ ] traverse, find all messages and services from input files and generate graphl services
@@ -214,7 +222,9 @@ graph TB
     > use templates https://github.com/ysugimoto/grpc-graphql-gateway/blob/master/protoc-gen-graphql/template.go
     - generate graphql types [definitions](./graphql-server.ts#L15)
     - generate resolvers
-- [ ] npm publish prepare - restructure repo
+- [ ] document use cases
+- [ ] npm publish prepare - restructure repo (mkdir example, mv server* example)
+- [ ] add tests for working server with dynamic generated schema using node test runner
 
 ### Questions
 
