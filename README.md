@@ -1,4 +1,4 @@
-# graphql-over-grpc-experiment
+# graphql-over-grpc
 
 Use grpc as a data source for graphql apollo server
 
@@ -201,10 +201,7 @@ graph TB
 - https://www.apollographql.com/tutorials/lift-off-part1/05-apollo-server
 - https://protobuf.dev/reference/other/
 
-### GraphQL
-
-- [GraphQL explained, 2016](https://www.apollographql.com/blog/graphql/basics/graphql-explained/)
-- [GraphQL vs REST comparison](https://www.apollographql.com/blog/graphql/basics/graphql-vs-rest/)
+### [GraphQL](./graphql.md)
 
 ### Gateways
 
@@ -234,6 +231,13 @@ graph TB
 - would it be easier to manually create graphql schemas?
 
 ## Meetings
+
+### 2023-07-30
+
+- Type System - GraphQL gRPC Comparison
+- [Build Naive Implementation](https://graphql.org/graphql-js/constructing-types/)
+  - Use [https://github.com/graphql/graphql-js](graphql-js)
+  - Tests
 
 ### 2023-06-24
 
