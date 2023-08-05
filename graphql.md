@@ -57,6 +57,11 @@ type Droid implements Character {
 
 - [Introspection](https://graphql.org/learn/introspection/) (`__schema, __type, ...`)
 
+## [Tools](https://graphql.org/code/#javascript)
+
+Potential tools to use in the project:
+- [GraphQL Scalars - Data Integrity and Strict Validations on GraphQL](https://the-guild.dev/graphql/scalars) to reuse with cross-environment types
+
 ## Comparison
 
 | Compare  | REST       | gRPC         | GraphQL     |
@@ -70,6 +75,7 @@ type Droid implements Character {
 | Endpoints | Multiple       | Single      | [Single](https://graphql.org/learn/best-practices/#http) |
 | Versioning | ∅       | ∅      | ∅ |
 
+...More on [REST, GraphQL, gRPC](https://www.karanpratapsingh.com/courses/system-design/rest-graphql-grpc) comparison
 
 # Links
 
@@ -78,4 +84,4 @@ type Droid implements Character {
 - [GraphQL Current Working Specification Draft](http://spec.graphql.org/draft/)
 - [GraphQL explained, 2016](https://www.apollographql.com/blog/graphql/basics/graphql-explained/)
 - [GraphQL vs REST comparison](https://www.apollographql.com/blog/graphql/basics/graphql-vs-rest/)
-
+- [GraphQL Mesh A fully-featured GraphQL gateway framework, incl GRPC](https://the-guild.dev/graphql/mesh/docs/handlers/grpc)

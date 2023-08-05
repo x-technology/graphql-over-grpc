@@ -209,15 +209,18 @@ graph TB
 
 ## Backlog
 
+- [ ] write a general purpose graphql server to work with generated grpc code
 - [ ] create nestjs tutorial - schema first (nexus!) or code first?
 - [ ] [check golang grpc gateway](https://github.com/grpc-ecosystem/grpc-gateway)
 - [ ] protoc plugin to generate graphql schemas from grpc microservices
   > POC
   - [ ] traverse, find all messages and services from input files and generate graphl services
-    https://protobufjs.github.io/protobuf.js/Root.html#nested
-    https://github.com/protobufjs/protobuf.js/blob/master/examples/traverse-types.js
+    - https://protobufjs.github.io/protobuf.js/Root.html#nested
+    - https://github.com/protobufjs/protobuf.js/blob/master/examples/traverse-types.js
+    - [alternative traverse](https://stackoverflow.com/questions/722668/traverse-all-the-nodes-of-a-json-object-tree-with-javascript)
     > use templates https://github.com/ysugimoto/grpc-graphql-gateway/blob/master/protoc-gen-graphql/template.go
     - generate graphql types [definitions](./graphql-server.ts#L15)
+      [](https://graphql.org/graphql-js/constructing-types/)
     - generate resolvers
 - [ ] document use cases
 - [ ] npm publish prepare - restructure repo (mkdir example, mv server* example)
@@ -232,11 +235,13 @@ graph TB
 
 ## Meetings
 
-### 2023-07-30
+### 2023-08-01
 
-- Type System - GraphQL gRPC Comparison
+- [Type System - GraphQL gRPC Comparison](./graphql.md)
+- Backlog
+  - Questions
 - [Build Naive Implementation](https://graphql.org/graphql-js/constructing-types/)
-  - Use [https://github.com/graphql/graphql-js](graphql-js)
+  - Use [https://github.com/graphql/graphql-js](graphql-js), and specifically [types](https://graphql.org/graphql-js/type)
   - Tests
 
 ### 2023-06-24
