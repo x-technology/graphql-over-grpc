@@ -237,7 +237,7 @@ graph TB
 
 ### 2023-08-01
 
-- [Type System - GraphQL gRPC Comparison](./graphql.md)
+- [x] [Type System - GraphQL gRPC Comparison](./graphql.md)
 - Backlog
   - Questions
 - [Build Naive Implementation](https://graphql.org/graphql-js/constructing-types/)
