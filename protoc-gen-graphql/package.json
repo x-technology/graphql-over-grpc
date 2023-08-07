@@ -4,7 +4,8 @@
   "description": "",
   "bin": "index.js",
   "scripts": {
-    "test": "../vendor/protoc-23.2-osx-aarch_64/bin/protoc --graphql_out=. ../books.proto"
+    "start": "../vendor/protoc-23.2-osx-aarch_64/bin/protoc --graphql_out=. ../books.proto",
+    "test": "node --test ./tests/**"
   },
   "keywords": [],
   "author": "korzio@gmail.com",
@@ -12,5 +13,8 @@
   "dependencies": {
     "google-protobuf": "^3.21.2",
     "protobufjs": "^7.2.3"
+  },
+  "devDependencies": {
+    "mock-fs": "^5.2.0"
   }
 }
