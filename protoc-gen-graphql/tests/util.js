@@ -1,38 +1,51 @@
 // TODO change to node:fs/promises after node@20.6 released
 // https://github.com/nodejs/node/pull/48856
-const fs = require('node:fs');
-const { join } = require('node:path');
-const { spawn } = require('node:child_process');
+const fs = require("node:fs");
+const { join } = require("node:path");
+const { spawn } = require("node:child_process");
+const path = require("node:path");
+const mock = require("mock-fs");
 
 exports.getTestDirs = () => {
   // get all directories
-  const testDirContent = fs.readdirSync(__dirname)
-  console.log(testDirContent)
-  const testDirs = []
+  const testDirContent = fs.readdirSync(__dirname);
+  console.log(testDirContent);
+  const testDirs = [];
 
   for (const dirItem of testDirContent) {
-    const dirPath = join(__dirname, dirItem)
-    const stat = fs.lstatSync(dirPath)
+    const dirPath = join(__dirname, dirItem);
+    const stat = fs.lstatSync(dirPath);
     if (stat.isDirectory()) {
-      testDirs.push(dirPath)
+      testDirs.push(dirPath);
     }
   }
 
-  return testDirs
-}
+  return testDirs;
+};
 
-exports.spawnProtocProcess = () => {
-  const ls = spawn('ls', ['-lh', '/usr']);
-
-  ls.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
+exports.runProtoc = (dir) => {
+  mock({
+    "/tmp": mock.load(dir, { recursive: false, lazy: false }),
+    '/tmp/protoc': mock.load(path.resolve(__dirname, '../../vendor/protoc-23.2-osx-aarch_64/bin/protoc')),
   });
 
-  ls.stderr.on('data', (data) => {
-    console.error(`stderr: ${data}`);
+  process.env.PATH = `${process.env.PATH}:/tmp`
+  const child = spawn("ls", ["-c", "/tmp", "-la"], {
+    cwd: process.cwd(),
+    env: {
+      PATH: process.env.PATH,
+    },
   });
 
-  ls.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
+  child.stdout.on('data', function(data) {
+    console.log('PATH:', data.toString());
   });
-}
+
+  child.stderr.on('data', function(data) {
+    console.error('Error:', data.toString());
+  });
+
+  child.on('exit', function(code) {
+    console.log('Child process exited with code', code);
+  });
+};

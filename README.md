@@ -209,6 +209,8 @@ graph TB
 
 ## Backlog
 
+- [ ] add tests for working server with dynamic generated schema using node test runner
+  - [ ] make it in [docker](./protoc-gen-graphql/tests/Dockerfile)
 - [ ] write a general purpose graphql server to work with generated grpc code
 - [ ] create nestjs tutorial - schema first (nexus!) or code first?
 - [ ] [check golang grpc gateway](https://github.com/grpc-ecosystem/grpc-gateway)
@@ -224,7 +226,6 @@ graph TB
     - generate resolvers
 - [ ] document use cases
 - [ ] npm publish prepare - restructure repo (mkdir example, mv server* example)
-- [ ] add tests for working server with dynamic generated schema using node test runner
 
 ### Questions
 
