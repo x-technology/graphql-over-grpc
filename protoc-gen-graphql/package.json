@@ -5,6 +5,8 @@
   "bin": "index.js",
   "scripts": {
     "start": "../vendor/protoc-23.2-osx-aarch_64/bin/protoc --graphql_out=. ../books.proto",
+    "docker:build": "docker build -t local-protoc .",
+    "docker:run": "docker run -it local-protoc bash",
     "test": "node --test ./tests/**"
   },
   "keywords": [],

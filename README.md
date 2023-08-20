@@ -24,6 +24,15 @@ query ExampleQuery {
 }
 ```
 
+## Build & Run Locally
+
+```bash
+# use default protoc version
+docker build -t local-protoc .
+# or specify custom one
+docker build --build-arg PROTOC_VERSION=24.0 -t local-protoc .
+```
+
 ## GRPC Graphql Plugin
 
 - `Protobuf Definitions`: The plugin should be able to parse the protobuf definitions (.proto files) which define the gRPC service and the message types it uses. This includes service methods and their request/response types.
@@ -200,6 +209,11 @@ graph TB
 - https://www.apollographql.com/docs/apollo-server/
 - https://www.apollographql.com/tutorials/lift-off-part1/05-apollo-server
 - https://protobuf.dev/reference/other/
+
+- https://github.com/xanthous-tech/grpc-graphql-schema
+- https://x-tech.io/our-engineering-blog/translating-grpc-services-into-graphql
+- https://medium.com/xanthous/translating-grpc-services-into-graphql-6a8e49556d96
+- https://docs.google.com/presentation/d/11sw3yK7p6xYcES9Wsjco7z3lGgmYlefnNrqhZ6vaYvA/edit#slide=id.g4c78b68687_0_93
 
 ### [GraphQL](./graphql.md)
 

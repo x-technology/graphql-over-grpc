@@ -25,7 +25,7 @@ function generateFile() {
 
   request.getProtoFileList().forEach(fileDescriptorProto => {
     debugContent = `${debugContent}\nfile: ${fileDescriptorProto.getName()}`
-  })
+  });
 
   protobuf.load("books.proto", function (err, root) {
     if (err) {
