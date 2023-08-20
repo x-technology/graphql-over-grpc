@@ -7,10 +7,10 @@ describe("executes all test packages", (t) => {
   for (const dir of getTestDirs()) {
     it(`runs protoc in ${dir}`, async (t) => {
       runProtoc(dir);
-      assert.strictEqual(1, 1);
 
-      tmpDir = fs.readdirSync("/tmp");
-      console.log(tmpDir);
+      actualDir = fs.readdirSync(dir);
+      assert.equal(actualDir.includes('schema.gql'), true, 'should produce schema file');
+      assert.equal(actualDir.includes('debug.log'), true, 'should produce debug file');
     });
   }
 });
