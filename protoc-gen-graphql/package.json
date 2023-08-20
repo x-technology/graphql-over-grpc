@@ -6,8 +6,8 @@
   "scripts": {
     "start": "protoc --graphql_out=. ../books.proto",
     "docker:build": "docker build -t local-protoc .",
-    "docker:run": "docker run -it local-protoc bash",
-    "docker:test": "docker run -it local-protoc node --test ./tests/**",
+    "docker:debug": "docker run -it local-protoc bash",
+    "docker:test": "docker run local-protoc node --test ./tests/**",
     "test": "node --test ./tests/**"
   },
   "keywords": [],
