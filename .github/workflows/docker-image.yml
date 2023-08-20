@@ -1,0 +1,14 @@
+name: Run Tests With Docker
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build And Run Tests With Docker Image
+      working-directory: ./protoc-gen-graphql
+      run: |
+        npm run docker:build
+        npm run docker:test
+          
