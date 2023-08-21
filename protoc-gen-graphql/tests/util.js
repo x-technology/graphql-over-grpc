@@ -20,8 +20,8 @@ exports.getTestDirs = () => {
   return testDirs;
 };
 
-exports.runProtoc = (cwd) => {
-  spawnSync("protoc", ["--graphql_out", ".", "books.proto"], {
+exports.runProtoc = (cwd, protoFiles) => {
+  spawnSync("protoc", ["--graphql_out", ".", ...protoFiles], {
     cwd,
   });
 };

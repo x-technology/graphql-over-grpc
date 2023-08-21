@@ -7,10 +7,6 @@ const {
 const protobuf = require("protobufjs");
 
 function generateFile() {
-  // console.log('inside')
-  // console.log(fs.readFileSync(0).toString())
-
-
   const debugFile = new CodeGeneratorResponse.File();
   const file = new CodeGeneratorResponse.File();
 
