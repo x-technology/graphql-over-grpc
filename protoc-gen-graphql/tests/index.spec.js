@@ -1,29 +1,29 @@
 const assert = require("node:assert");
 const fs = require("node:fs");
-const { join } = require("node:path");
+const { join, parse } = require("node:path");
 const { it, describe } = require("node:test");
 const { runProtoc } = require("./util");
 
 describe("grpc definitions", () => {
   const debugFile = "debug.log";
-  const schemaFile = "schema.gql";
-  const testDataPath = "/protoc-gen-graphql/tests/"
+  const testDataPath = "/protoc-gen-graphql/tests/";
 
   it("should produce single schema and debug files for single file definition", () => {
     const dir = join(testDataPath, "single-file");
     const originalDir = fs.readdirSync(dir);
+    const schemaFile = `${parse(originalDir[0]).name}.gql`;
     runProtoc(dir, originalDir);
 
     const actualDir = fs.readdirSync(dir);
     assert.equal(
       actualDir.includes(schemaFile),
       true,
-      "should produce schema file"
+      `should produce schema file ${schemaFile}`
     );
     assert.equal(
       actualDir.includes(debugFile),
       true,
-      "should produce debug file"
+      `should produce debug file ${debugFile}`
     );
   });
 
@@ -33,20 +33,30 @@ describe("grpc definitions", () => {
     runProtoc(dir, originalDir);
 
     const actualDir = fs.readdirSync(dir);
-    assert.equal(
-      actualDir.includes(schemaFile),
-      true,
-      "should produce schema file"
-    );
+    originalDir
+      .map(parse)
+      .map(({ name }) => `${name}.gql`)
+      .forEach((schemaFile) => {
+        assert.equal(
+          actualDir.includes(schemaFile),
+          true,
+          `should produce schema file ${schemaFile}`
+        );
+      });
+
     assert.equal(
       actualDir.includes(debugFile),
       true,
-      "should produce debug file"
+      `should produce debug file ${debugFile}`
     );
 
     const actualDebug = fs.readFileSync(join(dir, debugFile), "utf-8");
-    originalDir.forEach(protoFile => {
-      assert.equal(actualDebug.includes(`file: ${protoFile}`), true, `should process ${protoFile} file`);
+    originalDir.forEach((protoFile) => {
+      assert.equal(
+        actualDebug.includes(`file: ${protoFile}`),
+        true,
+        `should process ${protoFile} file`
+      );
     });
   });
 });
