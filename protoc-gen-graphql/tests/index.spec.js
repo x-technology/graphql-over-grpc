@@ -16,7 +16,7 @@ describe("grpc definitions", () => {
 
     const actualDir = fs.readdirSync(dir);
     assert.equal(
-      actualDir.includes(debugFile),
+      actualDir.includes(schemaFile),
       true,
       "should produce schema file"
     );
@@ -34,7 +34,7 @@ describe("grpc definitions", () => {
 
     const actualDir = fs.readdirSync(dir);
     assert.equal(
-      actualDir.includes(debugFile),
+      actualDir.includes(schemaFile),
       true,
       "should produce schema file"
     );
