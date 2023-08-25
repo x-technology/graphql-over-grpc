@@ -215,6 +215,9 @@ graph TB
 - https://medium.com/xanthous/translating-grpc-services-into-graphql-6a8e49556d96
 - https://docs.google.com/presentation/d/11sw3yK7p6xYcES9Wsjco7z3lGgmYlefnNrqhZ6vaYvA/edit#slide=id.g4c78b68687_0_93
 
+- https://github.com/emzeq/proto2graphql
+- https://github.com/whale-labs/proto-converter
+
 ### [GraphQL](./graphql.md)
 
 ### Gateways

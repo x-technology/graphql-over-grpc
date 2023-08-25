@@ -23,11 +23,10 @@ async function generateFile() {
     const schemaFile = new CodeGeneratorResponse.File();
     schemaFile.setName(`${parse(protoFile.getName()).name}.gql`);
 
-    const root = await protobuf.load(protoFile.getName())
-    // Obtain a message type
-    // console.log(root);
-    // const Book = root.lookupType("books.Book");
-    // fs.writeFileSync('debug.log', Book.toString())
+    const root = await protobuf.load(protoFile.getName());
+    debugContent = `${debugContent}\nnested: ${JSON.stringify(
+      root.nestedArray
+    )}`;
 
     fileContent = `${fileContent}\n${JSON.stringify(root.toJSON(), null, 2)}`;
     schemaFile.setContent(fileContent);
